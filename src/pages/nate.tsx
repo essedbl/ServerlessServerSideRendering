@@ -41,7 +41,15 @@ function Nate({data}) {
                     <div>
                     <img src={`${urlBase}/nate.jpg`} alt="Nate Holcomb" width={300} height={300} />
                     </div>
-                    <div>Nate is currently studying for an Azure cert, but he's actually hardcore AWS!</div>
+                    <div>Nate loves Jeep and AWS. Jeep is number 1, Ford Bronco is dumb.</div>
+                </div>
+                <div>
+                    <a
+                        href="/"
+                        className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >Return Home</a>
                 </div>
             </main>
         </div>
