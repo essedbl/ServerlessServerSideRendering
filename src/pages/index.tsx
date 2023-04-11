@@ -29,13 +29,12 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Image
+              <img
                 className="relative "
                 src={`${urlBase}/slalom.png`}
                 alt="Next.js Logo"
                 width={141}
                 height={70}
-                priority
               />
             </a>
           </div>
