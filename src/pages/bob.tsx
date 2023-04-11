@@ -23,15 +23,15 @@ export async function getServerSideProps() {
     };
 }
 
-export default function Bob() {
+export default function Bob({data}) {
     return (
         <div>
             <Head>
                 <title>Serverless ServerSide Rendering</title>
-                <meta property="og:title" content="Main Site Title" />
+                <meta property="og:title" content={`${data.title} ${data.renderDate}`} />
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://localhost" />
-                {/* <meta property="og:image" content="https://ia.media-imdb.com/images/rock.jpg" /> */}
+                <meta property="og:url" content={data.url} />
+                <meta property="og:image" content={data.imageUrl} />
                 <meta name="description" content="This is a generic description." />
                 <link rel="icon" href="/favicon.png" />
             </Head>
