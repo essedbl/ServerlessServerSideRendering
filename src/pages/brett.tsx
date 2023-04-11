@@ -41,12 +41,8 @@ export default function Brett({data}) {
                 <div>
                     <div>Brett Hovenkotter</div>
                     <div>
-                        <Image
-                            src="/brett.jpg"
-                            alt="Brett Hovenkotter"
-                            width={300}
-                            height={300}
-                            priority />
+                    <img src={`${urlBase}/brett.jpg`} alt="Brett Hovenkotter" width={300} height={300} />
+                    
                     </div>
                     <div>Brett loves AWS Big Time, but he also loves Kotlin.</div>
                 </div>

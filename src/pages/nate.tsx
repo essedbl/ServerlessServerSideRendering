@@ -39,12 +39,7 @@ function Nate({data}) {
                 <div>
                     <div>Nate Holcomb</div>
                     <div>
-                        <Image
-                            src="/nate.jpg"
-                            alt="Nate Holcomb"
-                            width={300}
-                            height={300}
-                            priority />
+                    <img src={`${urlBase}/nate.jpg`} alt="Nate Holcomb" width={300} height={300} />
                     </div>
                     <div>Nate is currently studying for an Azure cert, but he's actually hardcore AWS!</div>
                 </div>

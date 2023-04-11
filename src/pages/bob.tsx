@@ -42,12 +42,8 @@ export default function Bob({data}) {
                 <div>
                     <div>Bob Dhaens, Emeritus</div>
                     <div>
-                        <Image
-                            src="/bob.jpg"
-                            alt="Bob Dhaens"
-                            width={300}
-                            height={300}
-                            priority />
+                        <img src={`${urlBase}/bob.jpg`} alt="Bob Dhaens"  width={300} height={300}/>
+                    
                     </div>
                     <div>Bob has retired, and he is now living the good life</div>
                 </div>
