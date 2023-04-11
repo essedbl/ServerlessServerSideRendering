@@ -31,7 +31,7 @@ export default function Home() {
             >
               <Image
                 className="relative "
-                src={`${urlBase}/slalom.png`
+                src={`${urlBase}/slalom.png`}
                 alt="Next.js Logo"
                 width={141}
                 height={70}
