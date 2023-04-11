@@ -1,8 +1,27 @@
 import Image from 'next/image'
 import Head from "next/head";
 import { Inter } from 'next/font/google'
-
 const inter = Inter({ subsets: ['latin'] })
+
+const urlBase = "https://main.d2efw40k4rx4wc.amplifyapp.com"
+
+export async function getServerSideProps() {
+    const renderDate = Date.now();
+    const formattedDate = new Intl.DateTimeFormat("en-US", {
+        dateStyle: "long",
+        timeStyle: "long",
+    }).format(renderDate);
+    return {
+        props: {
+            data: {
+                renderDate: formattedDate,
+                title: "Bob Dhaens",
+                url: `${urlBase}/bob`,
+                imageUrl: `${urlBase}/bob.jpg`
+            }
+        }
+    };
+}
 
 export default function Bob() {
     return (

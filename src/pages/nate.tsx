@@ -1,22 +1,37 @@
 import Image from 'next/image'
 import Head from "next/head";
 import { Inter } from 'next/font/google'
-import { render } from 'react-dom';
-import { AppProps } from 'next/app';
 const inter = Inter({ subsets: ['latin'] })
-//{ facts: { id: string; text: string }[]})
-function Nate({ props}
-    : {props:{renderDate: string, title: string, url: string, imageUrl: string}}
-    )
-     {
+
+const urlBase = "https://main.d2efw40k4rx4wc.amplifyapp.com"
+
+export async function getServerSideProps() {
+    const renderDate = Date.now();
+    const formattedDate = new Intl.DateTimeFormat("en-US", {
+        dateStyle: "long",
+        timeStyle: "long",
+    }).format(renderDate);
+    return {
+        props: {
+            data: {
+                renderDate: formattedDate,
+                title: "Nate Holcomb",
+                url: `${urlBase}/nate`,
+                imageUrl: `${urlBase}/nate.jpg`
+            }
+        }
+    };
+}
+
+function Nate({data}) {
     return (
         <div>
             <Head>
                 <title>Serverless ServerSide Rendering</title>
-                <meta property="og:title" content={props.title + props.renderDate}/>
+                <meta property="og:title" content={`${data.title} ${data.renderDate}`} />
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content={props.url} />
-                 <meta property="og:image" content={props.imageUrl} />
+                <meta property="og:url" content={data.url} />
+                <meta property="og:image" content={data.imageUrl} />
                 <meta name="description" content="This is a generic description." />
                 <link rel="icon" href="/favicon.png" />
             </Head>
@@ -38,23 +53,6 @@ function Nate({ props}
     )
 }
 
-export async function getServerSideProps() {
-    const renderDate = Date.now();
-    const formattedDate = new Intl.DateTimeFormat("en-US", {
-      dateStyle: "long",
-      timeStyle: "long",
-    }).format(renderDate);
-    console.log(
-      `SSR ran ppo on ${formattedDate}. This will be logged in CloudWatch.`
-    );
-    return { props: { 
-        renderDate: formattedDate,
-        title: "nate title",
-        url: "nate website url",
-        imageUrl: "nate image url"
-   } 
-};
-  }
 
 
-  export default Nate
+export default Nate
